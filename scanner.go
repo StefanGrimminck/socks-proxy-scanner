@@ -41,6 +41,8 @@ func checkProxy(addr string, t int) {
 		return
 	}
 
+	defer resp.Body.Close()
+
 	bodyBytes, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
